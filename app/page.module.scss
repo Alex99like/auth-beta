@@ -1,0 +1,39 @@
+.wrapper {
+  @apply p-4 pt-0 w-full;
+
+  .header {
+    @apply relative h-16 flex items-center justify-center;
+
+    button {
+      @apply absolute left-0;
+    }
+  }
+
+  .mail {
+    @apply flex flex-col items-center gap-3;
+
+    .field {
+      @apply w-full text-sm font-medium flex flex-col gap-2;
+    }
+
+    p {
+      @apply text-sm font-medium;
+    }
+
+    button {
+      @apply w-full mt-1;
+    }
+  }
+
+  .oauth {
+    @apply flex flex-col text-sm font-medium mt-10 gap-5;
+
+    div {
+      @apply flex justify-center gap-5;
+
+      button {
+        @apply bg-custom-zinc p-6 rounded-full;
+      }
+    }
+  }
+}
