@@ -1,11 +1,16 @@
+'use client'
+
 import { ArrowLeft } from '@/assets/arrow-left';
 import styles from './page.module.scss'
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { IconGoogle } from '@/assets/google-icon';
 import { AppleIcon } from '@/assets/apple-icon';
+import { signIn, signOut, useSession } from 'next-auth/react'
 
 export default function Home() {
+  const { data } = useSession()
+ 
   return (
     <main>
        <div className={styles.wrapper}>
@@ -14,7 +19,7 @@ export default function Home() {
           <ArrowLeft />
         </button>
         <h3>
-          Создать Аккаунт
+          {data?.user?.name || 'Создать Аккаунт'}
         </h3>
       </header>
       <div className={styles.mail}>
@@ -26,13 +31,16 @@ export default function Home() {
         <Button variant={'ghost'} size={'lg'}>
           Создать
         </Button>
+        <Button variant={'ghost'} size={'lg'} onClick={() => signOut()}>
+          Выйти
+        </Button>
       </div>
       <div className={styles.oauth}>
         <span>
           Создать профиль в один клик
         </span>
         <div>
-          <button>
+          <button onClick={() => signIn('google')}>
             <IconGoogle />
           </button>
           <button>
