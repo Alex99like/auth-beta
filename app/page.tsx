@@ -12,9 +12,13 @@ import { useState } from 'react';
 export default function Home() {
   const { data } = useSession()
   const [email, setEmail] = useState('')
- 
+  const [disabled, setDisabled] = useState(true)
+
   const handleMail = async () => {
-    await signIn('nodemailer', { email })
+    if (disabled) {
+      await signIn('nodemailer', { email })
+      setDisabled(false)
+    }
   }
 
   return (
