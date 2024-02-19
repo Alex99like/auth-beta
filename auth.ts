@@ -11,6 +11,7 @@ export const {
 } = NextAuth({
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
+  secret: '124312fdsfwedaswaewfddsc',
   pages: {
     verifyRequest: '/verify-request'
   },

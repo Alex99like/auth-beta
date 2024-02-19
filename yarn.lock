@@ -7,7 +7,7 @@
   resolved "https://registry.yarnpkg.com/@alloc/quick-lru/-/quick-lru-5.2.0.tgz#7bf68b20c0a350f936915fcae06f58e32007ce30"
   integrity sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==
 
-"@auth/core@0.27.0":
+"@auth/core@0.27.0", "@auth/core@workspace:*":
   version "0.27.0"
   resolved "https://registry.yarnpkg.com/@auth/core/-/core-0.27.0.tgz#25acf09ef5cbaeb31b34e0de1a6315141299a974"
   integrity sha512-3bydnRJIM/Al6mkYmb53MsC+6G8ojw3lLPzwgVnX4dCo6N2lrib6Wq6r0vxZIhuHGjLObqqtUfpeaEj5aeTHFg==
@@ -709,12 +709,12 @@ nanoid@^3.3.6, nanoid@^3.3.7:
   resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.7.tgz#d0c301a691bc8d54efa0a2226ccf3fe2fd656bd8"
   integrity sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==
 
-next-auth@^5.0.0-beta.11:
-  version "5.0.0-beta.11"
-  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-5.0.0-beta.11.tgz#46e531017622d9b54406fabc2c1dc5a47fa33df7"
-  integrity sha512-OrfOVyXBGC69O8lEe81ZwFzQuWnY3Bsqee7kawr1iBycgSD64oNCtoFvRXiOWe7R0jOaafqQQlpsOS0mARhT3Q==
+next-auth@^5.0.0-beta.12:
+  version "5.0.0-beta.12"
+  resolved "https://registry.yarnpkg.com/next-auth/-/next-auth-5.0.0-beta.12.tgz#8b2b3c20810b2fdfe33685e9133e167b384eae91"
+  integrity sha512-ehQhcKtDHSUTB+ZrDoW3NFYf/sG4KWCc4NJ1H1heFzNtNHTgGqJAYFA4G5AgbhRYaG8/0unU3SQdVVAwiMbGdQ==
   dependencies:
-    "@auth/core" "0.27.0"
+    "@auth/core" "workspace:*"
 
 next@14.1.0:
   version "14.1.0"
