@@ -3,6 +3,7 @@ import NextAuth from "next-auth"
 import Google from "next-auth/providers/google"
 import { db } from "@/lib/db"
 import authConfig from "@/auth.config"
+import authMailConfig from "./auth-mail.config"
 
 export const { 
   handlers: { GET, POST }, 
@@ -10,7 +11,11 @@ export const {
 } = NextAuth({
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
-  ...authConfig,
+  pages: {
+    verifyRequest: '/verify-request'
+  },
+  ...authMailConfig,
+  //...authConfig,
 })
   
   

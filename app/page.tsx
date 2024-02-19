@@ -7,10 +7,16 @@ import { Button } from '@/components/ui/button';
 import { IconGoogle } from '@/assets/google-icon';
 import { AppleIcon } from '@/assets/apple-icon';
 import { signIn, signOut, useSession } from 'next-auth/react'
+import { useState } from 'react';
 
 export default function Home() {
   const { data } = useSession()
+  const [email, setEmail] = useState('')
  
+  const handleMail = async () => {
+    await signIn('nodemailer', { email })
+  }
+
   return (
     <main>
       <div className={styles.wrapper}>
@@ -19,16 +25,20 @@ export default function Home() {
             <ArrowLeft />
           </button>
           <h3>
-            {data?.user?.name || 'Создать Аккаунт'}
+            {data?.user?.email || 'Создать Аккаунт'}
           </h3>
         </header>
         <div className={styles.mail}>
           <div className={styles.field}>
             <span>Почта</span>
-            <Input />
+            <Input 
+              type='email'
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
           </div>
           <p>Вы получите ссылку приглашение на вашу почту</p>
-          <Button variant={'ghost'} size={'lg'}>
+          <Button variant={'ghost'} size={'lg'} onClick={handleMail}>
             Создать
           </Button>
           <Button variant={'ghost'} size={'lg'} onClick={() => signOut()}>

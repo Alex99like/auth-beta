@@ -6,7 +6,7 @@ const { auth: middleware } = NextAuth(authConfig)
 
 export default middleware((req) => {
   // req.auth
-  console.log(req.auth?.user)
+  // console.log(req.auth?.user)
 
   return 
 })
